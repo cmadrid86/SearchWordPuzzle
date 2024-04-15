@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace DomainObjects.Exceptions;
+﻿namespace DomainObjects.Exceptions;
 
 [Serializable]
 public class CustomException : Exception
@@ -18,12 +16,5 @@ public class CustomException : Exception
     {
         StatusCode = statusCode;
         Title = title;
-    }
-
-    protected CustomException(SerializationInfo info, StreamingContext context)
-        : base(info, context)
-    {
-        Title = nameof(CustomException);
-        StatusCode = 500;
     }
 }
